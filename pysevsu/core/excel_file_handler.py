@@ -142,7 +142,6 @@ class Worksheet:
         _group_header: Dict[int, str] = {}
         _class_header: Dict[int, ClassAttribute] = {}
         _class_columns: Set[str] = {item.value for item in ClassAttribute}
-        _class_in_both_subgroups: bool = False
 
         for _, column, value in self._iter_rows():
             if (
@@ -156,28 +155,17 @@ class Worksheet:
                 groupname: str = _group_header.get(column)
                 class_attribute: ClassAttribute = _class_header.get(column)
                 if groupname:
-                    self._reset_data(data)
+                    yield from self._iter_cells(data)
+                    self._reset_subject(data)
                     data[ClassAttribute.GROUP] = groupname
 
-                if (
-                    class_attribute == ClassAttribute.CLASS
-                    and data[class_attribute] is not None
-                    and value
-                ):
-                    self._reset_subject(data)
-                    _class_in_both_subgroups = True
+                if class_attribute == ClassAttribute.CLASS:
+                    if data[ClassAttribute.CLASS] and value:
+                        yield from self._iter_cells(data)
+                        self._reset_subject(data)
 
                 if class_attribute and value:
                     data[class_attribute] = value
-
-                if (
-                    class_attribute == ClassAttribute.CLASSROOM
-                    and data[ClassAttribute.CLASS]
-                ):
-                    if not _class_in_both_subgroups:
-                        yield from self._iter_cells(data)
-                    else:
-                        _class_in_both_subgroups = True
             else:
                 _class_header[column] = ClassAttribute(value)
 

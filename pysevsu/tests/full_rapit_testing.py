@@ -8,20 +8,19 @@ from pysevsu.core.website_structure_handler import ScheduleStructure
 async def test():
     count: int = 0
     start_time = time.perf_counter()
-    pipeline = Pipeline(max_workers=8, request_limit=5)
+    pipeline = Pipeline(max_workers=8, request_limit=5, request_delay=0.2)
     try:
         async for class_ in pipeline.run(
             normalization=True,
-            **{
-                ScheduleStructure.STUDY_FORM: "Расписание промежуточной аттестации ОФО, ОЗФО",
-                ScheduleStructure.INSTITUTE: "ВТШ «СПИ». Факультет информационных технологий",
-                ScheduleStructure.DEGREE_COURSE: "2 курс Бакалавриат",
-                ScheduleStructure.SEMESTER: "II семестр",
-                ClassAttribute.WEEK: "уч.н. 43",
-            }
+            # **{
+            #     ScheduleStructure.STUDY_FORM: "Расписание промежуточной аттестации ОФО, ОЗФО",
+            #     ScheduleStructure.INSTITUTE: "ВТШ «СПИ». Факультет информационных технологий",
+            #     ScheduleStructure.DEGREE_COURSE: "2 курс Бакалавриат",
+            #     ScheduleStructure.SEMESTER: "II семестр",
+            #     ClassAttribute.WEEK: "уч.н. 43",
+            # }
         ):
-            if class_.group.name == "ИТ/б-24-2-о":
-                print(class_.number, class_.date, class_.name, class_.type_)
+            print(class_.number, class_.date, class_.name, class_.type_)
             count += 1
     finally:
         end_time = time.perf_counter()
