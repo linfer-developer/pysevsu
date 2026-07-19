@@ -6,6 +6,7 @@ from datetime import datetime, date, time
 import re
 
 
+
 def extract_course_number_and_degree(
     group: str,
 ) -> Tuple[int, Degree]:
