@@ -1,0 +1,22 @@
+# Кэш и временные файлы
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.cache
+
+# Окружения IDE
+.vscode/
+.idea/
+*.iml
+.vs/
+*.swp
+*.swo
+
+# Виртуальное окружение Python
+venv/
+env/
+ENV/
+.venv
+.env
