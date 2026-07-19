@@ -118,10 +118,6 @@ class Pipeline:
             If normalization=True: Class objects with structured attributes.
             If normalization=False: Raw dictionary data from Excel files.
 
-        Example:
-            >>> # Process only full-time students
-            >>> async for class_obj in pipeline.run(STUDY_FORM="Очная"):
-            ...     process_class(class_obj)
         """
         if not normalization:
             async for data in self._run_without_normalization(**kwargs):

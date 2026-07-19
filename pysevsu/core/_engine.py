@@ -111,7 +111,6 @@ class Producer:
         tasks: List[Coroutine] = []
 
         for url, data in parser.iter(**kwargs):
-            await asyncio.sleep(self.request_delay)
             task: Coroutine = asyncio.create_task(
                 self._request_a_file(data, url, semaphore, **kwargs)
             )
@@ -144,6 +143,7 @@ class Producer:
                     session=self._session,
                     end_url=end_url,
                 )
+                await asyncio.sleep(self.request_delay)
             except (aiohttp.ClientError, asyncio.TimeoutError) as error:
                 self.connection_errors[end_url] = error
                 if len(self.connection_errors) >= self.broken_requests_size:
