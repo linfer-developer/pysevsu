@@ -15,7 +15,3 @@ The library downloads schedule Excel files from the university website, extracts
 
 ---
 
-## 📦 Installation
-
-```bash
-pip install pysevsu
