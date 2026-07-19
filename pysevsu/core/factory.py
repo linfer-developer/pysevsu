@@ -10,11 +10,11 @@ flexible configuration for different processing needs.
 
 import asyncio
 import os
+import aiohttp
 from typing import Any, Coroutine, Dict, Optional, AsyncIterator
 from concurrent.futures import ThreadPoolExecutor
-import aiohttp
 from pysevsu.models.schemas import Class
-from pysevsu.core._normilizer import normalize_a_unit_of_data
+from pysevsu.pysevsu.core._normalizer import normalize_a_unit_of_data
 from pysevsu.core._engine import Producer, consumer
 
 

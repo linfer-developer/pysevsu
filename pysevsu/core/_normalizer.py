@@ -1,10 +1,10 @@
+import re
 from typing import Dict, Tuple, Any, List
+from datetime import datetime, date, time
 from pysevsu.core.excel_file_handler import ClassAttribute
 from pysevsu.core.website_structure_handler import ScheduleStructure
-from pysevsu.models.schemas import *
-from datetime import datetime, date, time
-import re
-
+from pysevsu.models.schemas import Group, Week, Teacher, Classroom, Class
+from pysevsu.models.enums import StudyForm, StudyWeekday, Degree
 
 
 def extract_course_number_and_degree(

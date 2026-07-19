@@ -79,7 +79,7 @@ class Parser:
         """Iterate over schedule entries that have Excel files.
 
         Filters out entries without Excel files and excludes administrative
-        documents (those starting with "Распоряжение").
+        documents (those which starting with "Распоряжение").
 
         Yields:
             Tuple of (excel_file_url, metadata_dict) for valid schedule entries.
@@ -103,7 +103,7 @@ class Parser:
                      ScheduleStructure enum values (e.g., STUDY_FORM="Очная").
 
         Yields:
-            Tuple of (excel_file_url, metadata_dict) that match all filters.
+            Tuple of (excel_file_url, metadata_dict) that match all the filters.
 
         Example:
             >>> parser = Parser(html_content)
