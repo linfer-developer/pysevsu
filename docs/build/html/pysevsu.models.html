@@ -1,0 +1,747 @@
+<!doctype html>
+<html class="no-js" lang="ru" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Алфавитный указатель" href="genindex.html"><link rel="search" title="Поиск" href="search.html"><link rel="next" title="sources" href="pysevsu.sources.html"><link rel="prev" title="core" href="pysevsu.core.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>models - документация pysevsu 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">документация pysevsu 0.1.0</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">документация pysevsu 0.1.0</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Поиск" name="q" aria-label="Поиск">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Структура библиотеки:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">pysevsu</a><input aria-label="Toggle navigation of pysevsu" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pysevsu.core.html">core</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pysevsu.sources.html">sources</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/pysevsu.models.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="module-pysevsu.models">
+<span id="models"></span><h1>models<a class="headerlink" href="#module-pysevsu.models" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Пакет предоставляет модели организации выходных данных библиотеки.</p>
+<section id="module-pysevsu.models.schemas">
+<span id="schemas"></span><h2>schemas<a class="headerlink" href="#module-pysevsu.models.schemas" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Модели схемы данных учебного расписания.</p>
+<p>Модуль содержит структуры данных для представления ключевых доменных сущностей
+расписания: академических групп (<a class="reference internal" href="#pysevsu.models.schemas.Group" title="pysevsu.models.schemas.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>), учебных недель
+(<a class="reference internal" href="#pysevsu.models.schemas.Week" title="pysevsu.models.schemas.Week"><code class="xref py py-class docutils literal notranslate"><span class="pre">Week</span></code></a>), преподавателей (<a class="reference internal" href="#pysevsu.models.schemas.Teacher" title="pysevsu.models.schemas.Teacher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Teacher</span></code></a>), аудиторий
+(<a class="reference internal" href="#pysevsu.models.schemas.Classroom" title="pysevsu.models.schemas.Classroom"><code class="xref py py-class docutils literal notranslate"><span class="pre">Classroom</span></code></a>) и учебных занятий (<a class="reference internal" href="#pysevsu.models.schemas.Class" title="pysevsu.models.schemas.Class"><code class="xref py py-class docutils literal notranslate"><span class="pre">Class</span></code></a>).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Group">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">institute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">course</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.enums.Degree" title="pysevsu.models.enums.Degree"><span class="pre">Degree</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/schemas.html#Group"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.schemas.Group" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Академическая группа.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Group.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#pysevsu.models.schemas.Group.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Group.institute">
+<span class="sig-name descname"><span class="pre">institute</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#pysevsu.models.schemas.Group.institute" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Group.course">
+<span class="sig-name descname"><span class="pre">course</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Group.course" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Group.degree">
+<span class="sig-name descname"><span class="pre">degree</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.enums.Degree" title="pysevsu.models.enums.Degree"><span class="pre">Degree</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Group.degree" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Week">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Week</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">semester</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/schemas.html#Week"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.schemas.Week" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Учебная неделя.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Week.number">
+<span class="sig-name descname"><span class="pre">number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#pysevsu.models.schemas.Week.number" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Week.year">
+<span class="sig-name descname"><span class="pre">year</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#pysevsu.models.schemas.Week.year" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Week.semester">
+<span class="sig-name descname"><span class="pre">semester</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Week.semester" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Week.start_date">
+<span class="sig-name descname"><span class="pre">start_date</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Week.start_date" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Week.end_date">
+<span class="sig-name descname"><span class="pre">end_date</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Week.end_date" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Teacher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Teacher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/schemas.html#Teacher"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.schemas.Teacher" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Преподаватель.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Teacher.fullname">
+<span class="sig-name descname"><span class="pre">fullname</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#pysevsu.models.schemas.Teacher.fullname" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Classroom">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Classroom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cipher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/schemas.html#Classroom"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.schemas.Classroom" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Учебная аудитория.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Classroom.cipher">
+<span class="sig-name descname"><span class="pre">cipher</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#pysevsu.models.schemas.Classroom.cipher" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.schemas.Group" title="pysevsu.models.schemas.Group"><span class="pre">Group</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">week</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.schemas.Week" title="pysevsu.models.schemas.Week"><span class="pre">Week</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">study_form</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.enums.StudyForm" title="pysevsu.models.enums.StudyForm"><span class="pre">StudyForm</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday" title="pysevsu.models.enums.StudyWeekday"><span class="pre">StudyWeekday</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.schemas.Classroom" title="pysevsu.models.schemas.Classroom"><span class="pre">Classroom</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teacher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pysevsu.models.schemas.Teacher" title="pysevsu.models.schemas.Teacher"><span class="pre">Teacher</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subgroup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/schemas.html#Class"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.schemas.Class" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Учебное занятие.</p>
+<p>Агрегирует сведения о времени и месте проведения занятия, преподавателе,
+академической группе и дисциплине.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.number">
+<span class="sig-name descname"><span class="pre">number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.number" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.date">
+<span class="sig-name descname"><span class="pre">date</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">date</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.date" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.time">
+<span class="sig-name descname"><span class="pre">time</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">time</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.time" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.group">
+<span class="sig-name descname"><span class="pre">group</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.schemas.Group" title="pysevsu.models.schemas.Group"><span class="pre">Group</span></a></span><a class="headerlink" href="#pysevsu.models.schemas.Class.group" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.week">
+<span class="sig-name descname"><span class="pre">week</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.schemas.Week" title="pysevsu.models.schemas.Week"><span class="pre">Week</span></a></span><a class="headerlink" href="#pysevsu.models.schemas.Class.week" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.study_form">
+<span class="sig-name descname"><span class="pre">study_form</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.enums.StudyForm" title="pysevsu.models.enums.StudyForm"><span class="pre">StudyForm</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.study_form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.day">
+<span class="sig-name descname"><span class="pre">day</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday" title="pysevsu.models.enums.StudyWeekday"><span class="pre">StudyWeekday</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.day" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.room">
+<span class="sig-name descname"><span class="pre">room</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.schemas.Classroom" title="pysevsu.models.schemas.Classroom"><span class="pre">Classroom</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.room" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.teacher">
+<span class="sig-name descname"><span class="pre">teacher</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pysevsu.models.schemas.Teacher" title="pysevsu.models.schemas.Teacher"><span class="pre">Teacher</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.teacher" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.type_">
+<span class="sig-name descname"><span class="pre">type_</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.type_" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.schemas.Class.subgroup">
+<span class="sig-name descname"><span class="pre">subgroup</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#pysevsu.models.schemas.Class.subgroup" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pysevsu.models.enums">
+<span id="enums"></span><h2>enums<a class="headerlink" href="#module-pysevsu.models.enums" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Модуль предоставляет возможные варианты данных для некоторых полей
+классов-участников схемы данных, основываясь на порядке проведения занятий
+в Севастопольском государственном университете.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyForm">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StudyForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/enums.html#StudyForm"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.enums.StudyForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">StrEnum</span></code></p>
+<p>Перечисление отражает все возможные виды расписания с веб-ресурса
+«Расписание» Севастопольского государственного университета.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyForm.FULL_TIME_CLASSES">
+<span class="sig-name descname"><span class="pre">FULL_TIME_CLASSES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Расписание</span> <span class="pre">учебных</span> <span class="pre">занятий</span> <span class="pre">ОФО,</span> <span class="pre">ОЗФО'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyForm.FULL_TIME_CLASSES" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyForm.CORRESPONDENCE_CLASSES">
+<span class="sig-name descname"><span class="pre">CORRESPONDENCE_CLASSES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Расписание</span> <span class="pre">экзаменационной</span> <span class="pre">и</span> <span class="pre">установочной</span> <span class="pre">сессии</span> <span class="pre">ЗФО'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyForm.CORRESPONDENCE_CLASSES" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyForm.FULL_TIME_CERTIFICATION">
+<span class="sig-name descname"><span class="pre">FULL_TIME_CERTIFICATION</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Расписание</span> <span class="pre">промежуточной</span> <span class="pre">аттестации</span> <span class="pre">ОФО,</span> <span class="pre">ОЗФО'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyForm.FULL_TIME_CERTIFICATION" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">StudyWeekday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/enums.html#StudyWeekday"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">StrEnum</span></code></p>
+<p>Перечисление отражает все учебные дни (6-ти дневная учебная неделя).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday.MONDAY">
+<span class="sig-name descname"><span class="pre">MONDAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Понедельник'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday.MONDAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday.TUESDAY">
+<span class="sig-name descname"><span class="pre">TUESDAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Вторник'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday.TUESDAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday.WEDNESDAY">
+<span class="sig-name descname"><span class="pre">WEDNESDAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Среда'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday.WEDNESDAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday.THURSDAY">
+<span class="sig-name descname"><span class="pre">THURSDAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Четверг'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday.THURSDAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday.FRIDAY">
+<span class="sig-name descname"><span class="pre">FRIDAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Пятница'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday.FRIDAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.StudyWeekday.SATURDAY">
+<span class="sig-name descname"><span class="pre">SATURDAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Суббота'</span></span><a class="headerlink" href="#pysevsu.models.enums.StudyWeekday.SATURDAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.enums.Degree">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">Degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/enums.html#Degree"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.enums.Degree" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">StrEnum</span></code></p>
+<p>Все ступени образования РФ, по которым могут обучаться студенты.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.Degree.BACHELOR">
+<span class="sig-name descname"><span class="pre">BACHELOR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Бакалавриат'</span></span><a class="headerlink" href="#pysevsu.models.enums.Degree.BACHELOR" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.Degree.SPECIALIST">
+<span class="sig-name descname"><span class="pre">SPECIALIST</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Специалитет'</span></span><a class="headerlink" href="#pysevsu.models.enums.Degree.SPECIALIST" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.Degree.MASTER">
+<span class="sig-name descname"><span class="pre">MASTER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Магистратура'</span></span><a class="headerlink" href="#pysevsu.models.enums.Degree.MASTER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.enums.Degree.POSTGRADUATE">
+<span class="sig-name descname"><span class="pre">POSTGRADUATE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Аспирантура'</span></span><a class="headerlink" href="#pysevsu.models.enums.Degree.POSTGRADUATE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pysevsu.models.raw">
+<span id="raw"></span><h2>raw<a class="headerlink" href="#module-pysevsu.models.raw" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Ключи сырых данных источников.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.raw.WebsiteDataKey">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">WebsiteDataKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/raw.html#WebsiteDataKey"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.raw.WebsiteDataKey" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">StrEnum</span></code></p>
+<p>Ключи атрибутов контекста структуры веб-страницы расписания.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.WebsiteDataKey.STUDY_FORM">
+<span class="sig-name descname"><span class="pre">STUDY_FORM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'study_form'</span></span><a class="headerlink" href="#pysevsu.models.raw.WebsiteDataKey.STUDY_FORM" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.WebsiteDataKey.INSTITUTE">
+<span class="sig-name descname"><span class="pre">INSTITUTE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'institute'</span></span><a class="headerlink" href="#pysevsu.models.raw.WebsiteDataKey.INSTITUTE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.WebsiteDataKey.SEMESTER">
+<span class="sig-name descname"><span class="pre">SEMESTER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'semester'</span></span><a class="headerlink" href="#pysevsu.models.raw.WebsiteDataKey.SEMESTER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.WebsiteDataKey.DEGREE_COURSE">
+<span class="sig-name descname"><span class="pre">DEGREE_COURSE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'degree_course'</span></span><a class="headerlink" href="#pysevsu.models.raw.WebsiteDataKey.DEGREE_COURSE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ExcelDataKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pysevsu/models/raw.html#ExcelDataKey"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">StrEnum</span></code></p>
+<p>Ключи атрибутов элементов расписания из файлов Excel.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.WEEK">
+<span class="sig-name descname"><span class="pre">WEEK</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'week'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.WEEK" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.GROUP">
+<span class="sig-name descname"><span class="pre">GROUP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'group'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.GROUP" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.SUBGROUP">
+<span class="sig-name descname"><span class="pre">SUBGROUP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'subgroup'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.SUBGROUP" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.DAY">
+<span class="sig-name descname"><span class="pre">DAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'day'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.DAY" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.DATE">
+<span class="sig-name descname"><span class="pre">DATE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'date'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.DATE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.NUMBER">
+<span class="sig-name descname"><span class="pre">NUMBER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'number'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.NUMBER" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.START_TIME">
+<span class="sig-name descname"><span class="pre">START_TIME</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'start_time'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.START_TIME" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.CLASS">
+<span class="sig-name descname"><span class="pre">CLASS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'classname'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.CLASS" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.TYPE">
+<span class="sig-name descname"><span class="pre">TYPE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'type'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.TYPE" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pysevsu.models.raw.ExcelDataKey.CLASSROOM">
+<span class="sig-name descname"><span class="pre">CLASSROOM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'classroom'</span></span><a class="headerlink" href="#pysevsu.models.raw.ExcelDataKey.CLASSROOM" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="pysevsu.sources.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">sources</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="pysevsu.core.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">core</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, linfer-developer
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">models</a><ul>
+<li><a class="reference internal" href="#module-pysevsu.models.schemas">schemas</a><ul>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Group"><code class="docutils literal notranslate"><span class="pre">Group</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Group.name"><code class="docutils literal notranslate"><span class="pre">Group.name</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Group.institute"><code class="docutils literal notranslate"><span class="pre">Group.institute</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Group.course"><code class="docutils literal notranslate"><span class="pre">Group.course</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Group.degree"><code class="docutils literal notranslate"><span class="pre">Group.degree</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Week"><code class="docutils literal notranslate"><span class="pre">Week</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Week.number"><code class="docutils literal notranslate"><span class="pre">Week.number</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Week.year"><code class="docutils literal notranslate"><span class="pre">Week.year</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Week.semester"><code class="docutils literal notranslate"><span class="pre">Week.semester</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Week.start_date"><code class="docutils literal notranslate"><span class="pre">Week.start_date</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Week.end_date"><code class="docutils literal notranslate"><span class="pre">Week.end_date</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Teacher"><code class="docutils literal notranslate"><span class="pre">Teacher</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Teacher.fullname"><code class="docutils literal notranslate"><span class="pre">Teacher.fullname</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Classroom"><code class="docutils literal notranslate"><span class="pre">Classroom</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Classroom.cipher"><code class="docutils literal notranslate"><span class="pre">Classroom.cipher</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class"><code class="docutils literal notranslate"><span class="pre">Class</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.number"><code class="docutils literal notranslate"><span class="pre">Class.number</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.date"><code class="docutils literal notranslate"><span class="pre">Class.date</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.time"><code class="docutils literal notranslate"><span class="pre">Class.time</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.name"><code class="docutils literal notranslate"><span class="pre">Class.name</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.group"><code class="docutils literal notranslate"><span class="pre">Class.group</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.week"><code class="docutils literal notranslate"><span class="pre">Class.week</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.study_form"><code class="docutils literal notranslate"><span class="pre">Class.study_form</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.day"><code class="docutils literal notranslate"><span class="pre">Class.day</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.room"><code class="docutils literal notranslate"><span class="pre">Class.room</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.teacher"><code class="docutils literal notranslate"><span class="pre">Class.teacher</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.type_"><code class="docutils literal notranslate"><span class="pre">Class.type_</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.schemas.Class.subgroup"><code class="docutils literal notranslate"><span class="pre">Class.subgroup</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pysevsu.models.enums">enums</a><ul>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyForm"><code class="docutils literal notranslate"><span class="pre">StudyForm</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyForm.FULL_TIME_CLASSES"><code class="docutils literal notranslate"><span class="pre">StudyForm.FULL_TIME_CLASSES</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyForm.CORRESPONDENCE_CLASSES"><code class="docutils literal notranslate"><span class="pre">StudyForm.CORRESPONDENCE_CLASSES</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyForm.FULL_TIME_CERTIFICATION"><code class="docutils literal notranslate"><span class="pre">StudyForm.FULL_TIME_CERTIFICATION</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday"><code class="docutils literal notranslate"><span class="pre">StudyWeekday</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday.MONDAY"><code class="docutils literal notranslate"><span class="pre">StudyWeekday.MONDAY</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday.TUESDAY"><code class="docutils literal notranslate"><span class="pre">StudyWeekday.TUESDAY</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday.WEDNESDAY"><code class="docutils literal notranslate"><span class="pre">StudyWeekday.WEDNESDAY</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday.THURSDAY"><code class="docutils literal notranslate"><span class="pre">StudyWeekday.THURSDAY</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday.FRIDAY"><code class="docutils literal notranslate"><span class="pre">StudyWeekday.FRIDAY</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.StudyWeekday.SATURDAY"><code class="docutils literal notranslate"><span class="pre">StudyWeekday.SATURDAY</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.enums.Degree"><code class="docutils literal notranslate"><span class="pre">Degree</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.enums.Degree.BACHELOR"><code class="docutils literal notranslate"><span class="pre">Degree.BACHELOR</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.Degree.SPECIALIST"><code class="docutils literal notranslate"><span class="pre">Degree.SPECIALIST</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.Degree.MASTER"><code class="docutils literal notranslate"><span class="pre">Degree.MASTER</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.enums.Degree.POSTGRADUATE"><code class="docutils literal notranslate"><span class="pre">Degree.POSTGRADUATE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pysevsu.models.raw">raw</a><ul>
+<li><a class="reference internal" href="#pysevsu.models.raw.WebsiteDataKey"><code class="docutils literal notranslate"><span class="pre">WebsiteDataKey</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.raw.WebsiteDataKey.STUDY_FORM"><code class="docutils literal notranslate"><span class="pre">WebsiteDataKey.STUDY_FORM</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.WebsiteDataKey.INSTITUTE"><code class="docutils literal notranslate"><span class="pre">WebsiteDataKey.INSTITUTE</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.WebsiteDataKey.SEMESTER"><code class="docutils literal notranslate"><span class="pre">WebsiteDataKey.SEMESTER</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.WebsiteDataKey.DEGREE_COURSE"><code class="docutils literal notranslate"><span class="pre">WebsiteDataKey.DEGREE_COURSE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey</span></code></a><ul>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.WEEK"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.WEEK</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.GROUP"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.GROUP</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.SUBGROUP"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.SUBGROUP</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.DAY"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.DAY</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.DATE"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.DATE</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.NUMBER"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.NUMBER</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.START_TIME"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.START_TIME</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.CLASS"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.CLASS</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.TYPE"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.TYPE</span></code></a></li>
+<li><a class="reference internal" href="#pysevsu.models.raw.ExcelDataKey.CLASSROOM"><code class="docutils literal notranslate"><span class="pre">ExcelDataKey.CLASSROOM</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=6ff560e8"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/translations.js?v=cd1d70c9"></script>
+    </body>
+</html>
